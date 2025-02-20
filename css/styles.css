@@ -106,17 +106,44 @@ header .container {
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-decoration: none;
-  padding: 24px 0 24px;
+  padding: 24px 0;
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 .menu li .nav-link:hover,
 .menu li .nav-link:focus {
   text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
 
 .menu li:first-child .nav-link:hover,
 .menu li:first-child .nav-link:focus {
   color: #404bbf;
   text-decoration: none;
+}
+.nav-link.active {
+  color: #404bbf;
+}
+.menu li .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+.menu li .nav-link:hover::after,
+.menu li .nav-link:focus::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 address {
@@ -156,7 +183,16 @@ address {
 /* Hero Section */
 .hero {
   background-color: #2e2f42;
-
+  background-image: url("../images/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      90deg,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/hero-bg.jpg");
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -201,6 +237,7 @@ address {
 .hero-btn:focus {
   background-color: #404bbf;
   color: #ffffff;
+  transition: 0.3s ease;
 }
 
 /* Features Section */
@@ -333,6 +370,35 @@ address {
   padding: 0;
   display: block;
 }
+.team-socials .icon {
+  width: 20px;
+  height: 20px;
+  fill: #f4f4fd;
+}
+
+.team-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.team-socials {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 16 0 16 0;
+}
+
+.team-socials a:hover {
+  background-color: #2a3db9;
+  transition: 0.3s;
+}
 /* Portfolio Section */
 .portfolio {
   width: 100%;
@@ -413,6 +479,75 @@ address {
   font-size: 16px;
   line-height: 1.5;
   color: #434455;
+}
+
+.portfolio-item {
+  position: relative;
+  width: calc((100% - 48px) / 3);
+  background: #fff;
+  cursor: pointer;
+}
+
+.portfolio-item-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.portfolio-item-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(77, 47, 231, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  opacity: 0;
+  transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.portfolio-item-overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin-top: 20px;
+}
+
+.portfolio-item-info {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+  text-align: center;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  top: 0;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .portfolio-item-wrapper img {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 
 /* Footer */
