@@ -293,6 +293,22 @@ address {
 .features-item {
   width: calc((100% - 3 * 24px) / 4);
 }
+.features-i {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+}
+.features-i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
 
 /* Team Section */
 
