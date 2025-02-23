@@ -62,12 +62,12 @@ header .container {
   margin: 0 auto;
 
   width: 1158px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header {
   border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 1px rgba(46, 47, 66, 0.08);
 }
 
 .web,
@@ -129,10 +129,10 @@ header .container {
 .menu li .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -1px;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 4px;
   background-color: #404bbf;
   border-radius: 2px;
 }
@@ -143,10 +143,10 @@ header .container {
 .menu li .nav-link:focus::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -1px;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 4px;
   background-color: #404bbf;
   border-radius: 2px;
 }
@@ -250,6 +250,7 @@ address {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -318,12 +319,12 @@ address {
   width: 264px;
   height: 112px;
   background: #f4f4fd;
+  margin-bottom: 8px;
 }
 .features-i {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
 }
 
 /* Team Section */
