@@ -573,10 +573,10 @@ address {
   padding-bottom: 100px;
 }
 .footer .container {
-  margin: 0 auto;
-
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 120px; /* Устанавливает расстояние между блоком текста и иконками */
 }
 
 .footer .logo {
@@ -611,4 +611,49 @@ address {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+.social-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 16 0 16 0;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.footer-icons {
+  width: 208px;
+  height: 80px;
+}
+.footer-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-list .icon {
+  width: 20px;
+  height: 20px;
+  fill: #f4f4fd;
+}
+
+.social-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.social-list a:hover {
+  background-color: #2a3db9;
+  transition: 0.3s;
 }
